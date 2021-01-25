@@ -1,0 +1,11 @@
+{
+  "name": "busca_cep",
+  "version": "1.0.0",
+  "description": "Projeto de teste para busca de CEPs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paulo Vinícius Baleeiro",
+  "license": "MIT"
+}
