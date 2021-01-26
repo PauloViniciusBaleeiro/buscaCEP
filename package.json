@@ -4,7 +4,7 @@
   "description": "Projeto de teste para busca de CEPs",
   "main": "src/app.js",
   "scripts": {
-    "start": "ts-node-dev src/app.ts",
+    "start": "ts-node-dev --respawn --transpileOnly src/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Paulo Vinícius Baleeiro",
