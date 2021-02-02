@@ -1,10 +1,10 @@
 import cors from 'cors';
 import express from 'express';
-import Middleware from '../../middlewares/middleware';
-import CEPController from '../cep.controller';
+// import Middleware from '../../middlewares/middleware';
+import CEPRoute from '../v1/routes/cep.route';
 
 const router = express.Router();
-const middleware = new Middleware;
+// const middleware = new Middleware;
 
 // enable CORS - Cross Origin Resource Sharing
 let corsOptionsCliente;
@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Rotas
-router.use('/cep', [cors(corsOptionsCliente), middleware.checkToken], OrdemServicoRoute);
+router.use('/cep', [cors(corsOptionsCliente)], CEPRoute);
 
 
 export default router;
