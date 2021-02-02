@@ -1,6 +1,5 @@
 import { Router } from 'express';
 import CEP from '../cep.controller';
-import { query, validationResult } from 'express-validator';
 
 const cep = new CEP();
 
