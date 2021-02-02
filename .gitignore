@@ -10,6 +10,7 @@ loginSkip.txt
 
 #buildFiles
 build
+dist
 
 # zip/rar files
 *.zip

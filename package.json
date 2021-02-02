@@ -5,6 +5,7 @@
   "main": "app.ts",
   "scripts": {
     "start": "ts-node-dev --respawn --transpile-only src/app.ts",
+    "build": "tsc",
     "test": "npx mocha --require ts-node/register ./tests/*.test.ts",
     "test:healthcheck": "npx mocha --require ts-node/register ./tests/0*.test.ts",
     "test:cep": "npx mocha --require ts-node/register ./tests/1*.test.ts"
