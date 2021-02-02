@@ -1,3 +1,95 @@
 {
-  
+  "swagger": "2.0",
+  "info": {
+    "description": "Documentação de uso da API de Busca de CEP proposta como desafio técnico para LuizaLabs",
+    "version": "1.0.0",
+    "title": "Busca CEP",
+    "contact": "pauloviniciusbf@gmail.com"
+  },
+  "host": "localhost:3000",
+  "tags": [
+    {
+      "name": "Health",
+      "description": "Saúde da aplicação"
+    },
+    {
+      "name": "CEP",
+      "description": "Localiza o endereço"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/healthcheck": {
+      "get":{
+        "tags":[
+          "Health"
+        ],
+        "summary": "Testa a saúde da aplicação",        
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operação realizada com sucesso"
+          }
+        }
+      }
+    },
+    "/v1/cep/{cep}": {
+      "get": {
+        "tags": [
+          "CEP"
+        ],
+        "sumary": "Busca o endereço a partir de um número de CEP informado",
+        "description": "Traz os dados de um endereço a partir de um CEP informado. É realizado tentativas de busca incluindo um zero (0) à direita até que se encontre um endereço válido",
+        "produces":[
+          "application/json"
+        ],
+        "parameters":[
+          {
+            "name": "cep",
+            "in": "path",
+            "description": "CEP válido com 8 dígitos numéricos nos formatos XXXXXXXX ou XXXXX-XXX",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Endereço encontrado com sucesso"
+          },
+          "422": {
+            "description": "CEP inválido"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Endereco": {
+      "type": "object",
+      "properties":{
+        "logradouro": {
+          "type": "string"
+        },
+        "bairro":{
+          "type": "string"
+        },
+        "cidade": {
+          "type": "string"
+        },
+        "estado": {
+          "type": "string"
+        },
+        "cep_localizado": {
+          "type": "string"
+        },
+        "cep_buscado": {
+          "type": "string"
+        }
+      }
+    }
+  }
 }
